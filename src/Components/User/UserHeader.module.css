@@ -1,0 +1,8 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;/*o primeiro vai ser de 1fr e o segundo vai ser de automatico, ou seja, vai fazer as contas sozinho para colocar o restante do outro lado fazendo com que caiba*/
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  position: relative;/*necessário para o menu mobile*/
+}

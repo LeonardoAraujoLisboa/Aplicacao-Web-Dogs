@@ -1,0 +1,47 @@
+.photo:nth-child(2) {
+  grid-column: 2 / 4;/*ele vai ocupar da linha dois da coluna até a linha 4*/
+  grid-row: span 2;/*ai ele vai expandir duas pra baixo*/
+}
+
+@media (max-width: 40rem) {
+  .photo:nth-child(2) {
+    grid-column: initial;
+    grid-row: initial;
+  }
+}
+
+.photo {
+  border-radius: 0.2rem;
+  display: grid;
+  overflow: hidden;/*se nao tiver nao vai conseguir arredondar os cantos*/
+  cursor: pointer;
+}
+
+/* .photo img devido ao skeleton tive q mudar para div*/ .photo > div{
+  grid-area: 1 / 1;
+}
+
+.photo .visualizacao{
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  /*display: flex; para poder colocar o número no centro*/
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 1;
+  display: none;
+}
+
+.photo .visualizacao::before {
+  content: '';
+  display: inline-block;/*para ele ficar na mesma linha do que ta escrito*/
+  width: 16px;
+  height: 10px;
+  margin-right: 0.25rem;
+  background: url('../../Assets/visualizacao.svg') no-repeat center center;
+}
+
+.photo:hover .visualizacao {
+  display: flex;
+}

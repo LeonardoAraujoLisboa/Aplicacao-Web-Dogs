@@ -1,0 +1,64 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;/*isso é para expandir os itens*/
+  margin: 1rem;
+}
+
+.single.form {
+  margin: 1rem 0px;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  resize: none;/*sem isso apareceria um incone para eu poder aumentar o textarea e ai colocando isso esse icone some*/
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background: #eee;
+  transition: 0.2s;
+}
+
+.textarea:focus, .textarea:hover {
+  outline: none;
+  border-color: #fb1;
+  background: white;
+  box-shadow: 0 0 0 3px #fea;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  color: #333;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.button:focus, .button:hover {
+  outline: none;
+}
+
+.button:focus svg path, .button:hover svg path {/*q eu quero falar com o path do svg*/
+  fill: #fea;
+  stroke: #fb1;/*ai sao as linhas*/
+}
+
+/*QUERO CRIAR UM EFEITO Q ELE ESTA LATINDO, LA NO SVG TEM UMA PARTE Q ESTA ENVOLVIDA POR UMA TAG g.... ENTAO VAMOS LA*/
+
+.button:focus svg g, .button:hover svg g {
+  animation: latir 0.6s infinite;
+}
+
+@keyframes latir {
+  from {
+    opacity: 0;/*ai ele esconde*/
+  }
+  to{
+    opacity: 1;/*ai ele mostra*/
+  }
+}
